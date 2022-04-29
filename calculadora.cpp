@@ -3,45 +3,54 @@ using namespace std;
 
 int main()
 {
-    cout << "Calculadora Simples\n";
-    cout << "Digite um número: ";
 
-    float num{ }; //declara a variável num como int
-    cin >> num; //pega o valor da variável num da entrada do usuário
+    while(true) {
+        float num{ }; //declara a variável num como int
+        float outronum{ };
+        char operacao{ };
+        int menu{ };
 
-    cout << "Digite outro número: ";
+        cout << "Calculadora Simples\n";
 
-    float outronum{ };
-    cin >> outronum;
+        cout << "1 - Nova Operação, 2 - Sair\n";
+        cin >> menu;
 
-    cout << "Qual operação você deseja fazer?\n + Soma\n - Subtração\n * Multiplicação\n / Divisão \n";
+        if (menu == 1) {
 
-    char operacao{ };
-    cin >> operacao;
+            cout << "Qual operação você deseja fazer?\n + Soma\n - Subtração\n * Multiplicação\n / Divisão \n";    
+            cin >> operacao;      
 
-    switch(operacao) {
-        case '+': 
-        cout << "A soma deu: " << num + outronum << '\n';
-        cout << "Operação escolhida: " << operacao << '\n';
-        break;    
+            cout << "Digite um número: "; 
+            cin >> num; //pega o valor da variável num da entrada do usuário
 
-        case '-':
-        cout << "A subtração deu: " << num - outronum << '\n';
-        cout << "Operação escolhida: " << operacao << '\n';
-        break;
-  
-        case '*':
-        cout << "A multiplicação deu: " << num * outronum << '\n';
-        cout << "Operação escolhida: " << operacao << '\n';
-        break;
+            cout << "Digite outro número: ";    
+            cin >> outronum;        
 
-        case '/':
-        cout << "A divisão deu: " << num / outronum << '\n';
-        cout << "Operação escolhida: " << operacao << '\n';
-        break;
+            switch(operacao) {
+                case '+': 
+                cout << "A soma deu: " << num + outronum << '\n';       
+                break;    
 
-        default:
-        cout << "Operação inválida" << '\n';
+                case '-':
+                cout << "A subtração deu: " << num - outronum << '\n';        
+                break;
+        
+                case '*':
+                cout << "A multiplicação deu: " << num * outronum << '\n';        
+                break;
+
+                case '/':
+                cout << "A divisão deu: " << num / outronum << '\n';       
+                break;
+
+                default:
+                cout << "Operação inválida" << '\n';
+            }
+
+        }
+        else {
+            break;
+        }    
     }
 
     return 0;
